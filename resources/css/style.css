@@ -1,8 +1,6 @@
-body::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-  background-color: white;
-  cursor: pointer;
+body{
+  background: rgb(38,100,111);
+background: linear-gradient(90deg, rgba(38,100,111,1) 0%, rgba(33,166,176,1) 100%);
 }
 
 body::-webkit-scrollbar-thumb {
@@ -741,3 +739,40 @@ body::-webkit-scrollbar-track {
   border-radius: 50%;
   margin-right: 10px;
 }/*# sourceMappingURL=style.css.map */
+
+
+
+.img1{
+  width: 700px;
+  height: 450px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+
+}
+
+.titreAccueil{
+  text-align: center;
+  color: white;
+}
+
+.lienConnex{
+  position: absolute;
+  top: 90%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  width: 130px;
+  text-decoration: none;
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+
+background-color: rgb(169, 94, 67);
+
+}
+
+.lienConnex label{
+
+color: white;
+}

@@ -12,8 +12,8 @@ $title = (isset($current['name'])) ? ' - ' . ucfirst($current['name']) : '';
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Site web<?= $title ?></title>
     <link rel="icon" href="public/images/favicon.png">
-    <!--<link rel="stylesheet" type="text/css" href="resources/css/style.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/style_mobile.css"> -->
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="resources/css/style_mobile.css">  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.40.0/apexcharts.min.js" integrity="sha512-Kr1p/vGF2i84dZQTkoYZ2do8xHRaiqIa7ysnDugwoOcG0SbIx98erNekP/qms/hBDiBxj336//77d0dv53Jmew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -23,7 +23,7 @@ $title = (isset($current['name'])) ? ' - ' . ucfirst($current['name']) : '';
 </head>
 <body>
 
-<?php require_once __BASEPATH__ . '/resources/views/common/header.php' ?>
+
 
 <main>
 
