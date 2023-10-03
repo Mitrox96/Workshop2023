@@ -4,7 +4,7 @@
 
         <img src="public/images/20859175_6347087.jpg" alt="" class="img1">
 
-        <a href="resources/views/auth/login.php" class="lienConnex"><label for="">Page de connexion</label></a>
+        <a href="<?= route('Login') ?>" class="lienConnex"><label for="">Page de connexion</label></a>
 
     </div>
 </main> 

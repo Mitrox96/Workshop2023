@@ -134,7 +134,6 @@ if (!function_exists('view')) {
         $path = __BASEPATH__ . '/resources/views/';
 
         if (file_exists($path . $page  . '.php')) {
-
             if ($vars !== null) {
                 // J'extrais les variables de $vars si elles existent
                 extract($vars);
