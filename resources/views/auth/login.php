@@ -1,15 +1,22 @@
 <div class="row">
     <form action="<?= route('Login') ?>" method="post" class="form">
     
-        <h1>Se connecter</h1>
+        <h1 id="titre_co">Se connecter</h1>
         <div><input class="input" type="email" id="email" name="email" required autocomplete="off" placeholder="email"></div>
         <div><input class="input" type="password" id="password" name="password" required autocomplete="off" placeholder="mot de passe"></div>
-        <div><button>Se connecter</button></div>
+        <div><button1>Se connecter</button1></div>
         <a href="<?= route('Login') ?>?forgotpassword=true">Mot de passe oublié ?</a>
         <p><?= $error ==! '' ? $error : '' ?></p>
         
     </form>
 </div>
+<div id="img_co">
+<img src="public/images/4330385.png" alt="" class="img1">
+</div>
+
+
+
+
 <div id="toggle" class="toggle-contact <?php if($forgotpassword === true): ?>active<?php endif ?>">
     <i id="close" class="fa-solid fa-xmark"></i>
     <h3>Envoyer un mail de récupération</h3>
