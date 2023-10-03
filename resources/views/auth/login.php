@@ -1,18 +1,23 @@
-<div class="row">
-    <form action="<?= route('Login') ?>" method="post" class="form">
-    
-        <h1 id="titre_co">Se connecter</h1>
-        <div><input class="input" type="email" id="email" name="email" required autocomplete="off" placeholder="email"></div>
-        <div><input class="input" type="password" id="password" name="password" required autocomplete="off" placeholder="mot de passe"></div>
-        <div><button1>Se connecter</button1></div>
-        <a href="<?= route('Login') ?>?forgotpassword=true">Mot de passe oublié ?</a>
-        <p><?= $error ==! '' ? $error : '' ?></p>
-        
-    </form>
-</div>
-<div id="img_co">
-<img src="public/images/4330385.png" alt="" class="img1">
-</div>
+<div class="container3">
+        <div class="form-container3">
+            <h1>EduPartage Connexion</h1>
+            <form action="<?= route('Login') ?>" method="post" class="form">
+                <div>
+                    <label id="email_co1" for="nom">Mail:</label><br>
+                    <input class="input" type="email" id="email_co2" name="email" required autocomplete="off" placeholder="email">
+                </div>
+                <div>
+                    <label id="password_co1" for="password">Mot de passe:</label><br>
+                    <input class="input" type="password" id="password_co2" name="password" required autocomplete="off" placeholder="mot de passe">
+                </div>
+                
+                <button id="button_co">M'inscrire</button>
+            </form>
+        </div>
+        <div class="image-container3">
+            <img src="public/images/4330385.png" alt="Image de taille moyenne">
+        </div>
+    </div>
 
 
 
