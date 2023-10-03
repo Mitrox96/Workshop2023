@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -29,3 +30,9 @@
 </html>
 
 !
+=======
+<?php
+session start;
+require('header.php');
+?>
+>>>>>>> d89c60e5c0340685ea11c8e8a28c011a0329bae3
