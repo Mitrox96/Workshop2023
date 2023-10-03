@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Framework{% endblock %}</title>
-    {% block stylesheets %}
+    <title>Framework</title>
         <link rel="stylesheet" href="public/css/app.css">
-    {% endblock %}
 </head>
 <body>
     <header>
@@ -15,17 +13,10 @@
     </header>
 
     <main>
-        {% block content %}
-            
-        {% endblock %}
+
     </main>
 
     <footer>
         
     </footer>
-
-    {% block javascripts %}
-        <script src="public/js/app.js"></script>
-    {% endblock %}
 </body>
-</html>
