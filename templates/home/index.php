@@ -1,5 +1,5 @@
 <?php
-session start;
+session_start();
 require('header.php');
 ?>
         <div class="container">
