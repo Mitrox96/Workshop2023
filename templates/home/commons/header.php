@@ -8,15 +8,4 @@
         <link rel="stylesheet" href="public/css/app.css">
 </head>
 <body>
-    <header>
-        
-    </header>
-
-    <main>
-
-    </main>
-
-    <footer>
-        
-    </footer>
-</body>
+   
