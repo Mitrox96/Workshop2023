@@ -10,6 +10,6 @@ class HomeController extends Controller
     {
 
         //return $this->twig->render('home/index.html.twig', ['users' => $users]);
-        return $this->twig->render('home/index.html.twig', []);
+        return $this->twig->render('home/index.php', []);
     }
 }
