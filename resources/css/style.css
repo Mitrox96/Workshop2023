@@ -851,13 +851,14 @@ color: white;
 #password_co1{
   display: block;
   text-align: center;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 #password_co2{
   display: block;
   text-align: center;
   margin: auto;
+  margin-top: 5px;
 }
 
 #button_co{
