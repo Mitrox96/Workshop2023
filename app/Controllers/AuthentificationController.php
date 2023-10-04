@@ -16,7 +16,7 @@ class AuthentificationController extends Controller
     public function login()
     {
         if ($_SESSION) {
-            redirect('Dashboard');
+            redirect('ProductList');
         }
                 $pagesNext = '';
         $forgotpassword = false;
@@ -71,7 +71,7 @@ class AuthentificationController extends Controller
     public function register()
     {
         if ($_SESSION) {
-            redirect('Dashboard');
+            redirect('ProductList');
         }
         $error = '';
         if ($_POST) {
@@ -81,7 +81,7 @@ class AuthentificationController extends Controller
                     if (User::checkMailAndPseudo($_POST['email'], $_POST['pseudo'])) {
                         if (User::register($_POST)) {
                             User::login($_POST['email'], $_POST['password']);
-                            redirect('Dashboard');
+                            redirect('ProductList');
                         }
 
                     } else {
@@ -107,14 +107,14 @@ class AuthentificationController extends Controller
                     $user = User::UserByToken($_GET['token']);
                     User::ResetPassword($_POST, $_GET['token']);
                     User::login($user[0]['email'], $_POST['password']);
-                    redirect('Dashboard');
+                    redirect('ProductList');
                 }
             }
 
 
             if (User::VerifToken($_GET['token'])) {
                 return view('auth.new_password', [
-                    'pages' => 'dashboard'
+                    'pages' => 'profil'
                 ]);
             }
         }
@@ -129,7 +129,7 @@ class AuthentificationController extends Controller
                     if (!User::login($_POST['email'], $_POST['password'])) {
                         return 'Les identifiants ne correspondent pas...';
                     } else {
-                        redirect('Dashboard');
+                        redirect('profil');
                     }
                 } else {
                     return "Le mot de passe doit être renseigné";

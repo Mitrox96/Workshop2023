@@ -11,9 +11,13 @@ Route::get(['/login', 'App\Controllers\AuthentificationController@login'])->name
 Route::get(['/logout', 'App\Controllers\AuthentificationController@logout'])->name('Logout');
 Route::get(['/register', 'App\Controllers\AuthentificationController@register'])->name('Register');
 Route::get(['/new-password', 'App\Controllers\AuthentificationController@ResetPassword'])->name('ResetPassword');
-Route::get(['/product_list', 'App\Controllers\ProductListController@product_list'])->name('ProductList');
 
 
 // Route Profil
 Route::get(['/profil', 'App\Controllers\ProfilController@index'])->name('Profil');
+
+// Route Page Matériels
+
+Route::get(['/product_list', 'App\Controllers\ProductListController@product_list'])->name('ProductList');
+
 
