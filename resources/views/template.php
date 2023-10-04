@@ -13,6 +13,7 @@ $title = (isset($current['name'])) ? ' - ' . ucfirst($current['name']) : '';
     <title>Site web<?= $title ?></title>
     <link rel="icon" href="public/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/product_list.css">
     <!-- <link rel="stylesheet" type="text/css" href="resources/css/style_mobile.css">  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
