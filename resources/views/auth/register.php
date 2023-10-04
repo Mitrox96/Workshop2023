@@ -11,6 +11,14 @@
                     <input class="input" type="text" id="email_co2" name="prenom" required autocomplete="off" placeholder="prenom">
                 </div>
                 <div>
+                    <label id="email_co1" for="nom">Votre statut:</label>
+                    <select id="menuder" name="statut">
+                        <option value="">--Quel-est votre statut ? --</option>
+                        <option value="1">Étudiant</option>
+                        <option value="2">Professeur</option>
+                    </select>    
+                </div>
+                <div>
                     <label id="email_co1" for="nom">Mail:</label>
                     <input class="input" type="email" id="email_co2" name="email" required autocomplete="off" placeholder="email">
                 </div>

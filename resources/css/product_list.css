@@ -5,22 +5,20 @@ body {
 }
 
 .header-container {
-    background-color: #ffffff;
+    background-color: rgb(35, 34, 34);
     color: white;
-    padding: 12px; /* Agrandissement du header */
+    padding: 10px; /* Agrandissement du header */
     text-align: center;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
 }
-
 .button-primary {
-    padding: 18px 30px;
+    padding: 18px 10px;
     font-size: 16px;
-    border: none;
     color: rgb(0, 0, 0);
     cursor: pointer;
-    border: 2px solid #565656;
     border-radius: 10px; /* Ajout de l'arrondi aux boutons */
     background-color: rgb(255, 255, 255);; /* Nouvelle couleur de fond pour les boutons */
 }
@@ -30,15 +28,19 @@ body {
     color: white /* Nouvelle couleur au survol pour un meilleur contraste */
 }
 
-#accueil-btn, #profil-btn {
+#accueil-btn{
     padding: 10px 20px;
-    @extend .button-primary;
+    height: 42px;
 }
 
+#profil-btn {
+    padding: 10px 20px;
+}
 #cursus-dropdown {
     font-size: 16px;
     padding: 10px;
-    width: 600px;
+    width: 500px;
+    height: 40px;
     text-align: center;
 }
 
@@ -46,4 +48,14 @@ main h1 {
     color: #c83c3c;
     font-size: 24px;
     margin-top: 20px;
+}
+
+.icone{
+    height: 40px;
+    border : 3px solid white;
+    border-radius: 100%;
+}
+
+.icone:hover{
+    border : 3px solid  #2c97a3;
 }
