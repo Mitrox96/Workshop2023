@@ -59,3 +59,51 @@ main h1 {
 .icone:hover{
     border : 3px solid  #2c97a3;
 }
+
+
+
+
+.product_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border: #333 2px solid;
+    padding: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+    border-radius: 15px;
+}
+
+.product_img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Ajout d'un arrondi à l'image */
+}
+
+.content {
+    flex: 1;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.product_title {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+
+.contact-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4285f4;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+}
