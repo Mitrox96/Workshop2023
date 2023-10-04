@@ -28,7 +28,7 @@ class User extends Model
         return false;
     }
 
-    public static function checkMailAndPseudo($email, $pseudo)
+    public static function checkMailAndPseudo($email, $prenom)
     {
         $db = self::db();
         $qry = "SELECT * FROM Utilisateur WHERE email = :email OR prenom = :prenom";
@@ -44,14 +44,17 @@ class User extends Model
     public static function register($post)
     {
         $db = self::db();
-        $qry = "INSERT INTO Utilisateur (nom, prenom, email, mot_de_passe)
-                VALUES (:nom, :prenom, :email, :mdp)";
+        $qry = "INSERT INTO Utilisateur (nom, prenom, email, mot_de_passe, id_cursus, id_ville)
+                VALUES (:nom, :prenom, :email, :mdp, :cursus, :ville)";
         $stt = $db->prepare($qry);
         $stt->execute([
             ':nom' => htmlentities($post['nom']),
             ':prenom' => htmlentities($post['prenom']),
             ':email' => htmlentities($post['email']),
-            ':mdp' => hash('sha256',$post['password'])
+            ':mdp' => hash('sha256',$post['password']),
+            ':cursus' => htmlentities($post['cursus']),
+            ':ville' => htmlentities($post['ville'])
+
         ]);
         return true;
     }
