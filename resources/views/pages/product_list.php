@@ -9,7 +9,7 @@
 </head>
 
 <header class="header-container">
-    <button id="accueil-btn" class="button-primary">Accueil</button>
+    <a id="accueil-btn" class="button-primary" href="<?= route('Logout')?>" >Accueil</a>
     <select id="cursus-dropdown" class="button-primary">
         <option value="informatique">Sélectionner </option>
         <option value="mathematiques">Mathématiques</option>

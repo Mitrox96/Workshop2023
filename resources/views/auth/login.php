@@ -3,21 +3,22 @@
         <h1>EduPartage Connexion</h1>
         <form action="<?= route('Login') ?>" method="post" class="form">
             <div>
-                <label id="email_co1" for="nom">Mail:</label>
-                <input class="input" type="email" id="email_co2" name="email"  autocomplete="off" placeholder="email">
+                <label class="email_co1" for="email">Mail</label>
+                <input class="input, email_co2" type="email" id="email" name="email" require autocomplete="off" placeholder="email">
             </div>
             <div>
-                <label id="password_co1" for="password">Mot de passe:</label>
-                <input class="input" type="password" id="password_co2" name="password" autocomplete="off" placeholder="mot de passe">
+                <label class="password_co1" for="password">Mot de passe</label>
+                <input class="input, password_co2" type="password" id="password" name="password" require autocomplete="off" placeholder="mot de passe">
+                <a class="password_co1" href="<?= route('Login') ?>?forgotpassword=true">Mot de passe oublié ?</a>
             </div>
             
             <div class="containerbutton">
-    <div class="center-buttons"> <!-- Ajout d'un conteneur flex pour centrer les boutons -->
-        <button id="button_co">Me connecter</button>
-        <a onclick="window.location.href='<?= route('Register') ?>';" id="registerButton" style="background-color: transparent; color: blue; text-decoration: underline;">M'inscrire</a>
-    </div>
-</div>
-
+                <div class="center-buttons"> <!-- Ajout d'un conteneur flex pour centrer les boutons -->
+                    <button class="button_co">Me connecter</button>
+                    <a onclick="window.location.href='<?= route('Register') ?>';" class="registerButton" style="background-color: transparent; color: blue; text-decoration: underline;">M'inscrire</a>
+                </div>
+            </div>
+            <p><?= $error ==! '' ? $error : '' ?></p>
         </form>
     </div>
     <div class="image-container3">

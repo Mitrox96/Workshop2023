@@ -8,6 +8,14 @@ use App\Models\Role;
 
 class ProductListController extends Controller
 {
+
+    public function __construct()
+    {
+        if(!$_SESSION) {
+            redirect('Accueil');
+        }
+    }
+
     public function product_list()
     {
 
