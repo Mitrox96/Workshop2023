@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+#accueil-btn, #profil-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#accueil-btn:hover, #profil-btn:hover {
+    background-color: #555;
+}
+
+#cursus-dropdown {
+    font-size: 16px;
+    padding: 10px;
+}
