@@ -11,6 +11,14 @@
                     <input class="input" type="text" id="email_co2" name="firstname" required autocomplete="off" placeholder="email">
                 </div>
                 <div>
+                    <label id="email_co1" for="nom">Votre statut:</label>
+                    <select id="menuder" name="statut">
+                        <option value="">--Quel-est votre statut ? --</option>
+                        <option value="1">Étudiant</option>
+                        <option value="2">Professeur</option>
+                    </select>    
+                </div>
+                <div>
                     <label id="email_co1" for="nom">Mail:</label>
                     <input class="input" type="email" id="email_co2" name="email" required autocomplete="off" placeholder="email">
                 </div>
@@ -21,7 +29,7 @@
                 <div>
                     <label id="password_co1" >Cursus</label>
                     <select id="menuder" name="cursus">
-                        <option value="">--Quel-est ton cursus ? --</option>
+                        <option value="">--Quel-est votre cursus ? --</option>
                         <option value="goldfish">Licence en Informatique - Première année</option>
                         <option value="goldfish">Licence en Informatique - Deuxième année </option>
                         <option value="goldfish">Licence en Informatique - Troisième année </option>
