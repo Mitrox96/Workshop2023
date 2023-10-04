@@ -19,7 +19,19 @@ class ProductListController extends Controller
     public function product_list()
     {
 
-        //return view('pages.home', ['users' => $users]);
-        return view('pages.product_list');
+        if ($_POST){
+            if (isset($_POST['email']) && $_POST['email'] !== '' ||
+                isset($_POST['prenom']) && $_POST['prenom'] !== '') {
+                    User::update($_SESSION['id_utilisateur'] ,$_POST['nom'], $_POST['prenom'],$_POST['email']);
+            }
+        }
+
+        $cursus = User::getCursus();
+        $monCursus = User::getMonCursus($_SESSION['id_utilisateur']);
+
+         return view('pages.product_list', [
+            'monCursus' => $monCursus,
+            'cursus' => $cursus,
+        ]);
     }
 }

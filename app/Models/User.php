@@ -212,6 +212,19 @@ class User extends Model
         $cursus = $stt->fetchAll(PDO::FETCH_OBJ);
         return $cursus;
     }
+
+    public static function getMonCursus($id_utilisateur)
+    {
+        $db = self::db();
+        $qry = "SELECT libelle___annee
+                FROM Cursus
+                WHERE Cursus.id_cursus = (SELECT id_cursus FROM Utilisateur WHERE id_utilisateur = :id_utilisateur)";
+        $stt = $db->prepare($qry);
+        $stt->bindParam(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
+        $stt->execute();
+        $monCursus = $stt->fetchColumn();
+        return $monCursus;
+    }
     
     public static function getRoles()
     {
