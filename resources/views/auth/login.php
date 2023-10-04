@@ -1,26 +1,29 @@
 <div class="container3">
-        <div class="form-container3">
-            <h1>EduPartage Connexion</h1>
-            <form action="<?= route('Login') ?>" method="post" class="form">
-                <div>
-                    <label id="email_co1" for="nom">Mail:</label>
-                    <input class="input" type="email" id="email_co2" name="email" required autocomplete="off" placeholder="email">
-                </div>
-                <div>
-                    <label id="password_co1" for="password">Mot de passe:</label>
-                    <input class="input" type="password" id="password_co2" name="password" required autocomplete="off" placeholder="mot de passe">
-                </div>
-                
-                
-                <button id="button_co">Me connecter</button>
-            </form>
-        </div>
-        <div class="image-container3">
-            <img src="public/images/4330385.png" alt="Image de taille moyenne">
-        </div>
+    <div class="form-container3">
+        <h1>EduPartage Connexion</h1>
+        <form action="<?= route('Login') ?>" method="post" class="form">
+            <div>
+                <label id="email_co1" for="nom">Mail:</label>
+                <input class="input" type="email" id="email_co2" name="email"  autocomplete="off" placeholder="email">
+            </div>
+            <div>
+                <label id="password_co1" for="password">Mot de passe:</label>
+                <input class="input" type="password" id="password_co2" name="password" autocomplete="off" placeholder="mot de passe">
+            </div>
+            
+            <div class="containerbutton">
+    <div class="center-buttons"> <!-- Ajout d'un conteneur flex pour centrer les boutons -->
+        <button id="button_co">Me connecter</button>
+        <a onclick="window.location.href='<?= route('Register') ?>';" id="registerButton" style="background-color: transparent; color: blue; text-decoration: underline;">M'inscrire</a>
     </div>
+</div>
 
-
+        </form>
+    </div>
+    <div class="image-container3">
+        <img src="public/images/4330385.png" alt="Image de taille moyenne">
+    </div>
+</div>
 
 
 <div id="toggle" class="toggle-contact <?php if($forgotpassword === true): ?>active<?php endif ?>">
@@ -42,3 +45,4 @@
     <?php } ?>
 </div>
 <div id="toggle-page" class="toggle-page <?php if($forgotpassword === true): ?>active<?php endif ?>"></div>
+
