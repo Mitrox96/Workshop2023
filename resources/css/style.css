@@ -808,7 +808,7 @@ color: white;
   font-weight: bold;
 }
 .form input[type="email"],
-.form input[type="password"] {
+.form input[type="password"], .form input[type="text"]{
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -837,32 +837,44 @@ color: white;
 }
 
 #email_co1{
-  position: relative;
-  left: 35%;
+  display: block;
   text-align: center;
+  margin-top: 20px;
 }
 
 #email_co2{
-  position: relative;
-  left: 35%;
+  display: block;
   text-align: center;
+  margin: auto;
 }
 
 #password_co1{
-  position: relative;
-  left: 35%;
+  display: block;
   text-align: center;
+  margin-top: 5px;
 }
 
 #password_co2{
-  position: relative;
-  left: 35%;
+  display: block;
   text-align: center;
+  margin: auto;
 }
 
 #button_co{
-  position: relative;
-  left: 45%;
+  display: block;
   text-align: center;
+  color:black;
+  margin: auto;
   margin-top: 20px;
+  background-color: #f1805e;
+  font-weight: 700;
+}
+
+#menuder{
+  display: block;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
