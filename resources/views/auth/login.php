@@ -3,11 +3,11 @@
             <h1>EduPartage Connexion</h1>
             <form action="<?= route('Login') ?>" method="post" class="form">
                 <div>
-                    <label id="email_co1" for="nom">Mail:</label><br>
+                    <label id="email_co1" for="nom">Mail:</label>
                     <input class="input" type="email" id="email_co2" name="email" required autocomplete="off" placeholder="email">
                 </div>
                 <div>
-                    <label id="password_co1" for="password">Mot de passe:</label><br>
+                    <label id="password_co1" for="password">Mot de passe:</label>
                     <input class="input" type="password" id="password_co2" name="password" required autocomplete="off" placeholder="mot de passe">
                 </div>
                 
