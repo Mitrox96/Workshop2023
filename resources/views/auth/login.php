@@ -11,7 +11,8 @@
                     <input class="input" type="password" id="password_co2" name="password" required autocomplete="off" placeholder="mot de passe">
                 </div>
                 
-                <button id="button_co">M'inscrire</button>
+                
+                <button id="button_co">Me connecter</button>
             </form>
         </div>
         <div class="image-container3">
