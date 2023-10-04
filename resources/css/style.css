@@ -863,11 +863,31 @@ color: white;
 #button_co{
   display: block;
   text-align: center;
-  color:black;
+  color: black;
   margin: auto;
   margin-top: 20px;
   background-color: #f1805e;
   font-weight: 700;
+  margin-right: 20px; /* Espacement à droite de 20px */
+
+}
+
+#registerButton{
+
+  display: block;
+  text-align: center;
+  color: black;
+  margin: auto;
+  margin-top: 30px;
+  background-color: #f1805e;
+  font-weight: 500;
+  margin-right: 20px; /* Espacement à droite de 20px */
+
+}
+
+#registerButton:hover{
+  color: rgb(77, 77, 247);
+  cursor: pointer;
 }
 
 #menuder{
@@ -877,4 +897,16 @@ color: white;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+.containerbutton{
+  display: flex;
+  justify-content: center; /* Pour centrer horizontalement les boutons */
+  align-items: center; /* Pour centrer verticalement les boutons */
+  gap: 20px; 
+}
+
+.center-buttons {
+  display: flex;
+  justify-content: center; /* Centre les boutons horizontalement */
 }
