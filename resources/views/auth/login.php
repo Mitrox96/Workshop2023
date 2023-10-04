@@ -12,7 +12,7 @@
                 </div>
                 
                 
-                <button id="button_co">M'inscrire</button>
+                <button id="button_co">Me connecter</button>
             </form>
         </div>
         <div class="image-container3">
