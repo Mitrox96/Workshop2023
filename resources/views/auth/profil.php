@@ -1,34 +1,62 @@
 <header class="header-container">
     <a id="accueil-btn" class="button-primary" href="<?= route('ProductList')?>" >Page Précédente</a>
-    <a href="<?= route('Logout')?>" id="profil-btn" class="button-image">Deconnexion</a>
+    <a href="<?= route('Logout')?>" id="profil-btn" class="button-primary">Deconnexion</a>
 </header>
-<section>
-    <div>
-        <p>nom</p>
-        <p><?= $user[0]['nom'] ?></p>
-    </div>
-    <div>
-        <p>prenom</p>
-        <p><?= $user[0]['prenom'] ?></p>
-    </div>
-    <div>
-        <p>email</p>
-        <p><?= $user[0]['email'] ?></p>
-    </div>
-    <div>
-        <p>cursus</p>
-        <p><?= $monCursus ?></p>
-    </div>
-    <div>
-        <p>ville</p>
-        <p><?= $maVille ?></p>
-    </div>
-    <p>ajout d'un article</p>
-    <a href="<?= route('ModifProfil') ?>">Modifier mon profil</a>
-</section>
 
-<div id="cursus-dropdown" class="button-primary">
+<div class="container3">
+    <div class="form-container4">
+        <h1>EduPartage <span> Profil</span></h1>
+        <form action="<?= route('Profil') ?>" method="post" class="form">
+            <div>
+                <label class="email_co1" for="email">Nom</label>
+                <input class="menuder" type="name" id="name" name="name" require autocomplete="off" placeholder="Nom">
+            </div>
+
+            <div>
+                <label class="email_co1" for="email">Prénom</label>
+                <input class="menuder" type="firstname" id="firstname" name="fisrtname" require autocomplete="off" placeholder="Prénom">
+            </div>
+            <div>
+                <label class="email_co1" for="email">Mail</label>
+                <input class="input, email_co2" type="email" id="email" name="email" require autocomplete="off" placeholder="email">
+            </div>
+            <div>
+                <label class="password_co1" for="password">Mot de passe</label>
+                <input class="input, password_co2" type="password" id="password" name="password" require autocomplete="off" placeholder="mot de passe">
+            </div>
+            
+            <div>
+                    <label class="email_co1" >Cursus</label>
+                    <select class="menuder" name="cursus" require>
+                        <option value="">--Quel-est ton cursus ? --</option>
+                        <?php foreach($cursus as $uncursus): ?>
+                            <option value="<?= $uncursus->id_cursus ?>"><?=$uncursus->libelle___annee ?> </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+            <div>
+                    <label class="email_co1" >Ville</label>
+                    <select class="menuder" name="ville" require>
+                        <?php foreach($ville as $uneville): ?>
+                            <option value="<?= $uneville->id_ville ?>"><?=$uneville->nom_ville ?> </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div><br>
+
+                <div>
+                    <button class="ajt"  id="ajout_artcl" name="ajout_d'article" require autocomplete="off">Ajout d'article</button>
+                </div>
+
+                 <a href="<?= route('ModifProfil') ?>">Modifier mon profil</a>
+
+        </form>
+
+    </div>
+    <div id="cursus-dropdown" class="button-primary">
     <?php foreach($materiel as $monMatereil): ?>
         <div value=""><p><?= $monMatereil->image ?></p><p><?=$monMatereil->description ?></p> </div>
     <?php endforeach; ?>
 </div>
+    </div>
+
