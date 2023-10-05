@@ -18,7 +18,8 @@ class AuthentificationController extends Controller
         if ($_SESSION) {
             redirect('ProductList');
         }
-                $pagesNext = '';
+        
+        $pagesNext = '';
         $forgotpassword = false;
         $mail = '';
         $checkMail = '';
@@ -74,24 +75,37 @@ class AuthentificationController extends Controller
             redirect('ProductList');
         }
         $error = '';
+
+        $ville = User::getVilles();
+        $cursus = User::getCursus();
+        $role = User::getRoles();
+
+
         if ($_POST) {
-            if ($_POST['email'] && $_POST['email'] ==! '' ||
-                $_POST['pseudo'] && $_POST['pseudo'] ==! '' ||
-                $_POST['password'] && $_POST['password'] ==! '') {
-                    if (User::checkMailAndPseudo($_POST['email'], $_POST['pseudo'])) {
+            if ($_POST['nom'] && $_POST['nom'] ==! '' ||
+                $_POST['prenom'] && $_POST['prenom'] ==! '' ||
+                $_POST['role'] && $_POST['role'] ==! '' ||
+                $_POST['email'] && $_POST['email'] ==! '' ||
+                $_POST['password'] && $_POST['password'] ==! '' ||
+                $_POST['cursus'] && $_POST['cursus'] ==! '' ||
+                $_POST['ville'] && $_POST['ville'] ==! '') {
+                    if (User::checkMailAndPseudo($_POST['email'], $_POST['prenom'])) {
                         if (User::register($_POST)) {
                             User::login($_POST['email'], $_POST['password']);
                             redirect('ProductList');
                         }
 
                     } else {
-                        $error = "L'email ou le pseudo existe déjà";
+                        $error = "L'email existe déjà";
                     }
                 }
         }
 
         return view('auth.register', [
-            'error' => $error
+            'error' => $error,
+            'ville' => $ville,
+            'cursus' => $cursus,
+            'role' => $role
         ]);
     }
 
@@ -129,7 +143,7 @@ class AuthentificationController extends Controller
                     if (!User::login($_POST['email'], $_POST['password'])) {
                         return 'Les identifiants ne correspondent pas...';
                     } else {
-                        redirect('profil');
+                        redirect('ProductList');
                     }
                 } else {
                     return "Le mot de passe doit être renseigné";
