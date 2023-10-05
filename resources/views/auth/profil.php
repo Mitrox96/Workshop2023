@@ -23,7 +23,7 @@
         <p>ville</p>
         <p><?= $maVille ?></p>
     </div>
-    <p>ajout d'un article</p>
+    <a href="<?= route('AddMateriel') ?>">ajout d'un article</a>
     <a href="<?= route('ModifProfil') ?>">Modifier mon profil</a>
 </section>
 

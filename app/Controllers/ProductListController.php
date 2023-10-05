@@ -34,4 +34,16 @@ class ProductListController extends Controller
             'cursus' => $cursus,
         ]);
     }
+
+    public function add_product()
+    {
+
+        $cursus = User::getCursus();
+        $monCursus = User::getMonCursus($_SESSION['id_utilisateur']);
+
+         return view('pages.add_product', [
+            'monCursus' => $monCursus,
+            'cursus' => $cursus,
+         ]);
+    }
 }
