@@ -4,7 +4,7 @@
 </header>
 
 <h2 class="email_co1">Modification de vos informations personnelles</h2>
-    <form method="POST" action="<?= route('') ?>">
+    <form method="POST" action="<?= route('Profil') ?>">
 
         <label class="email_co1" for="newEmail"> Nouveau mail :</label>
         <input type="email" class="menuder" name="newEmail" value="<?= $user[0]['email'] ?>"><br>

@@ -22,7 +22,7 @@ class ProfilController extends Controller
                 isset($_POST['pseudo']) && $_POST['pseudo'] !== '') {
                     User::update($_SESSION['id_utilisateur'] ,$_POST['prenom'], $_POST['email']);
             }
-            User::addProduct($_SESSION['id_utilisateur'] ,$_POST['image'], $_POST['description'], $_POST['cursus']);
+            //User::addProduct($_SESSION['id_utilisateur'] ,$_POST['image'], $_POST['description'], $_POST['cursus']);
         }
 
         $user = User::getUtilisateur($_SESSION['id_utilisateur']);

@@ -32,13 +32,16 @@
                 </div><br>
 
                 <div>
-                    <button onclick="<?= route('AddMateriel') ?>" class="ajt"  id="ajout_artcl" name="ajout_d'article" require autocomplete="off">Ajout d'article</button>
+                    <button class="ajt"  id="ajout_artcl" name="ajout_d'article" require autocomplete="off"><a href="<?= route('AddMateriel') ?>">Ajout d'article</a></button>
                 </div>
 
                 <div>
-                <a href="<?= route('ModifProfil') ?>">Modifier mon profil</a>
+                    <button class="ajt"  id="ajout_artcl" name="ajout_d'article" require autocomplete="off"><a href="<?= route('AddMateriel') ?>">Ajout d'article</a></button>
+                </div>
 
-                    <button onclick="<?= route('ModifProfil') ?>" class="ajt"  id="modif_prfl" name="modif_profil" require autocomplete="off">Modifiez votre profil</button>
+                <div>
+                    <button class="ajt"  id="modif_prfl" name="modif_profil" require autocomplete="off"><a href="<?= route('ModifProfil') ?>">Modifiez votre profil</a></button>
+                </div>
                 </div>
 
 
