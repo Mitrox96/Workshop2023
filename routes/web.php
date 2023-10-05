@@ -20,5 +20,6 @@ Route::get(['/modifprofil', 'App\Controllers\ProfilController@modifProfil'])->na
 // Route Page Matériels
 
 Route::get(['/product_list', 'App\Controllers\ProductListController@product_list'])->name('ProductList');
+Route::get(['/addMateriel', 'App\Controllers\ProductListController@add_product'])->name('AddMateriel');
 
 

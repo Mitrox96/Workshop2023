@@ -9,50 +9,36 @@
         <div action="<?= route('Profil') ?>" method="post" class="form">
             <div>
                 <label class="email_co1" for="email">Nom</label>
-                <input class="menuder" type="name" id="name" name="name" require autocomplete="off" >
+                <p class="menuder"><?= $user[0]['nom'] ?></p>
             </div>
 
             <div>
                 <label class="email_co1" for="email">Prénom</label>
-                <input class="menuder" type="firstname" id="firstname" name="fisrtname" require autocomplete="off" >
+                <p class="menuder"><?= $user[0]['prenom'] ?></p>
             </div>
             <div>
                 <label class="email_co1" for="email">Mail</label>
-                <input class="input, email_co2" type="email" id="email" name="email" require autocomplete="off">
-            </div>
-            <div>
-                <label class="password_co1" for="password">Mot de passe</label>
-                <input class="input, password_co2" type="password" id="password" name="password" require autocomplete="off">
+                <p class="menuder"<?= $user[0]['email'] ?>></p>
             </div>
             
             <div>
-                    <label class="email_co1" >Cursus</label>
-                    <select class="menuder" name="cursus" require>
-                        <option value="">--Quel-est ton cursus ? --</option>
-                        <?php foreach($cursus as $uncursus): ?>
-                            <option value="<?= $uncursus->id_cursus ?>"><?=$uncursus->libelle___annee ?> </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
+                <label class="email_co1" >Cursus</label>
+                <p class="menuder"><?= $monCursus ?></p>
+            </div>
 
             <div>
-                    <label class="email_co1" >Ville</label>
-                    <select class="menuder" name="ville" require>
-                        <?php foreach($ville as $uneville): ?>
-                            <option value="<?= $uneville->id_ville ?>"><?=$uneville->nom_ville ?> </option>
-                        <?php endforeach; ?>
-                    </select>
+                <label class="email_co1" >Ville</label>
+                <p class="menuder"><?= $maVille ?></p>
                 </div><br>
 
                 <div>
-                    <button class="ajt"  id="ajout_artcl" name="ajout_d'article" require autocomplete="off">Ajout d'article</button>
+                    <button onclick="<?= route('AddMateriel') ?>" class="ajt"  id="ajout_artcl" name="ajout_d'article" require autocomplete="off">Ajout d'article</button>
                 </div>
 
                 <div>
                     <button onclick="<?= route('ModifProfil') ?>" class="ajt"  id="modif_prfl" name="modif_profil" require autocomplete="off">Modifiez votre profil</button>
                 </div>
 
-                 <a href="<?= route('ModifProfil') ?>">Modifier mon profil</a>
 
         </div>
 

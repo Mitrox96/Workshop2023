@@ -60,15 +60,17 @@ class User extends Model
         return true;
     }
 
-    public static function update($id_utilisateur, $nom, $prenom, $email)
+    public static function update($id_utilisateur, $nom, $prenom, $email, $cursus, $ville)
     {
         $db = self::db();
-        $qry = "UPDATE Utilisateur SET nom = :nom,  prenom = :prenom, email = :email  WHERE id_utilisateur = :id_utilisateur AND";
+        $qry = "UPDATE Utilisateur SET nom = :nom,  prenom = :prenom, email = :email, cursus = :cursus, ville = :ville  WHERE id_utilisateur = :id_utilisateur";
         $stt = $db->prepare($qry);
         $stt->execute([
             ':nom' => htmlentities($nom),
             ':prenom' => htmlentities($prenom),
             ':email' => htmlentities($email),
+            ':cursus' => htmlentities($cursus),
+            ':ville' => htmlentities($ville),
             ':id_utilisateur' => $id_utilisateur
         ]);
         $_SESSION['prenom'] = htmlentities($prenom);
@@ -256,23 +258,35 @@ class User extends Model
         return $role;
 
     }
-
     public static function getMateriel($id_utilisateur)
-{
-    $db = self::db();
-    $qry = "SELECT image, description
-            FROM Materiel 
-            INNER JOIN emprunt ON Materiel.id_materiel = emprunt.id_materiel
-            INNER JOIN Utilisateur ON emprunt.id_utilisateur = Utilisateur.id_utilisateur
-            WHERE Utilisateur.id_utilisateur = :id_utilisateur";
-    $stt = $db->prepare($qry);
-    $stt->bindParam(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
-    $stt->execute();
-    $materiel = $stt->fetchAll(PDO::FETCH_ASSOC);
-    return $materiel;
+    {
+        $db = self::db();
+        $qry = "SELECT description, image
+                FROM Materiel 
+                INNER JOIN emprunt ON Materiel.id_materiel = emprunt.id_materiel
+                INNER JOIN Utilisateur ON emprunt.id_utilisateur = Utilisateur.id_utilisateur
+                WHERE Utilisateur.id_utilisateur = :id_utilisateur";
+        $stt = $db->prepare($qry);
+        $stt->bindParam(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
+        $stt->execute();
+        $materiel = $stt->fetchAll(PDO::FETCH_ASSOC);
+        return $materiel;
+    }
+
+    public static function addProduct($id_utilisateur, $image, $description, $cursus)
+    {
+        $db = self::db();
+        $qry = "UPDATE Materiel SET image = :image,  description = :description, id_cursus = :cursus, id_utilisateur = :id_utilisateur";
+        $stt = $db->prepare($qry);
+        $stt->execute([
+            ':image' => htmlentities($image),
+            ':description' => htmlentities($description),
+            ':cursus' => htmlentities($cursus),
+            ':id_utilisateur' => $id_utilisateur
+        ]);
+        return true;
+ 
 }
-
-
 public static function getMaterielForCursus($cursus_id)
 {
     $db = self::db();
@@ -287,6 +301,3 @@ public static function getMaterielForCursus($cursus_id)
     return $materiel_cursus;
     }
 }
-
-
-

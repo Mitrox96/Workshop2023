@@ -7,14 +7,14 @@
     <form method="POST" action="<?= route('') ?>">
 
         <label class="email_co1" for="newEmail"> Nouveau mail :</label>
-        <input type="email" class="menuder" name="newEmail" required><br>
+        <input type="email" class="menuder" name="newEmail" value="<?= $user[0]['email'] ?>"><br>
 
         <label class="email_co1" for="newPassword"> Nouveau mot de passe :</label>
-        <input class="menuder" type="password" name="newPassword" required><br>
+        <input class="menuder" type="password" name="newPassword"><br>
 
         <label class="email_co1" >Cursus</label>
             <select class="menuder" name="cursus" require>
-                <option value="">--Quel-est ton cursus ? --</option>
+                <option value=""><?= $monCursus ?></option>
                 <?php foreach($cursus as $uncursus): ?>
                     <option value="<?= $uncursus->id_cursus ?>"><?=$uncursus->libelle___annee ?> </option>
                 <?php endforeach; ?>
