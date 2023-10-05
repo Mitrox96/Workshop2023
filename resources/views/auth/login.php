@@ -1,6 +1,6 @@
 <div class="container3">
     <div class="form-container3">
-        <h1>EduPartage Connexion</h1>
+        <h1>EduPartage <span>Connexion</span></h1>
         <form action="<?= route('Login') ?>" method="post" class="form">
             <div>
                 <label class="email_co1" for="email">Mail</label>
