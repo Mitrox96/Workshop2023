@@ -3,15 +3,21 @@
 namespace App\Controllers;
 
 use App\Controllers\Controller;
-use App\Models\User;
+use App\Models\Users;
 use App\Models\Role;
-
+use App\Models\Model;
 class ProductListController extends Controller
 {
     public function product_list()
     {
+        
+        $users_model = new Users();
 
-        //return view('pages.home', ['users' => $users]);
-        return view('pages.product_list');
+        // Récupérer tous les utilisateurs depuis le modèle
+        $users = $users_model->getAllUsers();
+
+        // Retourner la vue avec les données
+        return view('pages.product_list', ['users' => $users]);
+        
     }
 }
