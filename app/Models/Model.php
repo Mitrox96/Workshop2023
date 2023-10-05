@@ -11,6 +11,8 @@ class Model
         $dbpw = env('DB_PASSWORD');     //myPassword
         $dbname = env('DB_NAME');    //myDatabase
 
+
+        
         $pdoReqArg1 = "mysql:host=". $host .";dbname=". $dbname .";";
         $pdoReqArg2 = $dbuser;
         $pdoReqArg3 = $dbpw;

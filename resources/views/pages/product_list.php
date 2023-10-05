@@ -20,7 +20,11 @@
     </a>
     </header>
     <body>
-
+    <?php foreach ($user as $users): ?>
+            <li>
+            <?php echo $user?>
+            </li>
+        <?php endforeach; ?>
 
     <div class="product_container">
     <img class="product_img" src="url_de_votre_image.jpg" alt="Image des pinceaux">
