@@ -69,7 +69,7 @@ class User extends Model
             ':nom' => htmlentities($nom),
             ':prenom' => htmlentities($prenom),
             ':email' => htmlentities($email),
-            ':id_joueur' => $id_joueur
+            ':id_utilisateur' => $id_utilisateur
         ]);
         $_SESSION['prenom'] = htmlentities($prenom);
         $_SESSION['email'] = htmlentities($email);
@@ -188,7 +188,8 @@ class User extends Model
         $stt->execute([
             ':id_utilisateur' => $id_utilisateur
         ]);
-        return $stt->fetchAll(\PDO::FETCH_ASSOC);
+        $user = $stt->fetchAll(\PDO::FETCH_ASSOC);
+        return $user;
     }
 
     public static function getVilles()
@@ -200,6 +201,20 @@ class User extends Model
         $stt->execute();
         $ville = $stt->fetchAll(PDO::FETCH_OBJ);
         return $ville;
+    }
+
+    public static function getMaVille($id_utilisateur)
+    {
+        $db = self::db();
+        $qry = "SELECT V.nom_ville
+                FROM Ville V
+                INNER JOIN Utilisateur U ON V.id_ville = U.id_ville
+                WHERE U.id_utilisateur = :id_utilisateur";
+        $stt = $db->prepare($qry);
+        $stt->bindParam(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
+        $stt->execute();
+        $maVille = $stt->fetchColumn();
+        return $maVille;
     }
 
     public static function getCursus()

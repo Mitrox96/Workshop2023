@@ -1,13 +1,28 @@
-<header>
-<a href="">Accueil</a>
-<a href="">deco</a>
+<header class="header-container">
+    <a id="accueil-btn" class="button-primary" href="<?= route('ProductList')?>" >Page Précédente</a>
+    <a href="<?= route('Logout')?>" id="profil-btn" class="button-image">Deconnexion</a>
 </header>
 <section>
-    <p>nom</p>
-    <p>prenom</p>
-    <p>email</p>
-    <p>cursus</p>
-    <p>ville</p>
+    <div>
+        <p>nom</p>
+        <p><?= $user[0]['nom'] ?></p>
+    </div>
+    <div>
+        <p>prenom</p>
+        <p><?= $user[0]['prenom'] ?></p>
+    </div>
+    <div>
+        <p>email</p>
+        <p><?= $user[0]['email'] ?></p>
+    </div>
+    <div>
+        <p>cursus</p>
+        <p><?= $monCursus ?></p>
+    </div>
+    <div>
+        <p>ville</p>
+        <p><?= $maVille ?></p>
+    </div>
     <p>ajout d'un article</p>
     <a href="<?= route('ModifProfil') ?>">Modifier mon profil</a>
 </section>

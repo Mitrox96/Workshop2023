@@ -17,11 +17,17 @@ class ProfilController extends Controller
     public function index()
     {
 
+        $user = User::getUtilisateur($_SESSION['id_utilisateur']);
         $materiel = User::getMateriel($_SESSION['id_utilisateur']);
+        $maVille = User::getMaVille($_SESSION['id_utilisateur']);
+        $monCursus = User::getMonCursus($_SESSION['id_utilisateur']);
 
 
         return view('auth.profil',[
-            'materiel' => $materiel
+            'materiel' => $materiel,
+            'user' => $user,
+            'maVille' => $maVille,
+            'monCursus' => $monCursus,
         ]);
   
     }
