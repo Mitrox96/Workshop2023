@@ -18,9 +18,10 @@ class ProfilController extends Controller
     {
         if ($_POST){
             if (isset($_POST['email']) && $_POST['email'] !== '' ||
-                isset($_POST['prenom']) && $_POST['prenom'] !== '') {
+                isset($_POST['prenom']) && $_POST['prenom'] !== '') 
+                {
                     User::update($_SESSION['id_utilisateur'] ,$_POST['prenom'], $_POST['email']);
-            }
+                }
         }
   
     }
