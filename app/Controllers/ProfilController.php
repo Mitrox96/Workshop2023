@@ -16,9 +16,21 @@ class ProfilController extends Controller
 
     public function index()
     {
-        return view('auth.profil');
+
+        $materiel = User::getMateriel($_SESSION['id_utilisateur']);
+
+
+        return view('auth.profil',[
+            'materiel' => $materiel
+        ]);
   
     }
 
+    public function modifProfil()
+    {
+        
+        return view('auth.modifProfil');
+  
+    }
 
 }

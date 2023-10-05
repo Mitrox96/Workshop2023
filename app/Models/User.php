@@ -237,4 +237,19 @@ class User extends Model
         return $role;
 
     }
+
+    public static function getMateriel($id_utilisateur)
+{
+    $db = self::db();
+    $qry = "SELECT description, image
+            FROM Materiel 
+            INNER JOIN emprunt ON Materiel.id_materiel = emprunt.id_materiel
+            INNER JOIN Utilisateur ON emprunt.id_utilisateur = Utilisateur.id_utilisateur
+            WHERE Utilisateur.id_utilisateur = :id_utilisateur";
+    $stt = $db->prepare($qry);
+    $stt->bindParam(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
+    $stt->execute();
+    $materiel = $stt->fetchAll(PDO::FETCH_ASSOC);
+    return $materiel;
+}
 }

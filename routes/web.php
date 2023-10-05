@@ -15,6 +15,7 @@ Route::get(['/new-password', 'App\Controllers\AuthentificationController@ResetPa
 
 // Route Profil
 Route::get(['/profil', 'App\Controllers\ProfilController@index'])->name('Profil');
+Route::get(['/modifprofil', 'App\Controllers\ProfilController@modifProfil'])->name('ModifProfil');
 
 // Route Page Matériels
 
