@@ -20,3 +20,11 @@ close.addEventListener('click', function(){
 })
 
 
+// Écouteur d'événement pour détecter les changements dans la liste déroulante
+document.getElementById('cursus-dropdown').addEventListener('change', function () {
+    // Récupérer la valeur sélectionnée
+    var selectedValue = this.value;
+    // Rediriger vers la nouvelle URL avec la valeur sélectionnée
+    window.location.href = 'votre_page.php?cursus=' + selectedValue;
+});
+

@@ -190,8 +190,12 @@ class User extends Model
         $stt->execute([
             ':id_utilisateur' => $id_utilisateur
         ]);
-        $user = $stt->fetchAll(\PDO::FETCH_ASSOC);
+
+
+
+        $user = $stt->fetchAll(PDO::FETCH_ASSOC);
         return $user;
+
     }
 
     public static function getVilles()
@@ -254,7 +258,6 @@ class User extends Model
         return $role;
 
     }
-
     public static function getMateriel($id_utilisateur)
     {
         $db = self::db();
@@ -282,5 +285,19 @@ class User extends Model
             ':id_utilisateur' => $id_utilisateur
         ]);
         return true;
+ 
+}
+public static function getMaterielForCursus($cursus_id)
+{
+    $db = self::db();
+    $qry = "SELECT description, image
+            FROM Materiel 
+            INNER JOIN Cursus ON Materiel.id_cursus = Cursus.id_cursus
+            WHERE Cursus.id_cursus = :id_cursus";
+    $stt = $db->prepare($qry);
+    $stt->bindParam(':id_cursus', $cursus_id, PDO::PARAM_INT);
+    $stt->execute();
+    $materiel_cursus = $stt->fetchAll(PDO::FETCH_OBJ);
+    return $materiel_cursus;
     }
 }

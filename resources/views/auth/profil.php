@@ -36,7 +36,12 @@
                 </div>
 
                 <div>
+                    <button class="ajt"  id="ajout_artcl" name="ajout_d'article" require autocomplete="off"><a href="<?= route('AddMateriel') ?>">Ajout d'article</a></button>
+                </div>
+
+                <div>
                     <button class="ajt"  id="modif_prfl" name="modif_profil" require autocomplete="off"><a href="<?= route('ModifProfil') ?>">Modifiez votre profil</a></button>
+                </div>
                 </div>
 
 
