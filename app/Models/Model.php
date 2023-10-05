@@ -6,11 +6,13 @@ class Model
 {
     protected static function db()
     {
-        $host = env('localhost');   //myHostAddress
-        $dbuser = env('root');     //myUserName
-        $dbpw = env('');     //myPassword
-        $dbname = env('edupartage');    //myDatabase
+        $host = env('DB_HOST');   //myHostAddress
+        $dbuser = env('DB_USER');     //myUserName
+        $dbpw = env('DB_PASSWORD');     //myPassword
+        $dbname = env('DB_NAME');    //myDatabase
 
+
+        
         $pdoReqArg1 = "mysql:host=". $host .";dbname=". $dbname .";";
         $pdoReqArg2 = $dbuser;
         $pdoReqArg3 = $dbpw;

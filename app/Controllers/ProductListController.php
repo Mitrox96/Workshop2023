@@ -3,9 +3,9 @@
 namespace App\Controllers;
 
 use App\Controllers\Controller;
-use App\Models\Users;
+use App\Models\User;
 use App\Models\Role;
-use App\Models\Model;
+
 class ProductListController extends Controller
 {
 
@@ -18,17 +18,7 @@ class ProductListController extends Controller
 
     public function product_list()
     {
-        
-        $users_model = new Users();
 
-<<<<<<< HEAD
-        // Récupérer tous les utilisateurs depuis le modèle
-        $users = $users_model->getAllUsers();
-
-        // Retourner la vue avec les données
-        return view('pages.product_list', ['users' => $users]);
-        
-=======
         if ($_POST){
             if (isset($_POST['email']) && $_POST['email'] !== '' ||
                 isset($_POST['prenom']) && $_POST['prenom'] !== '') {
@@ -43,6 +33,5 @@ class ProductListController extends Controller
             'monCursus' => $monCursus,
             'cursus' => $cursus,
         ]);
->>>>>>> 6d253ab4972f294e8c4200c2e416eb7a81db983b
     }
 }
