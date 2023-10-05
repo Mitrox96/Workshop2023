@@ -4,6 +4,8 @@ namespace App\Models;
 use PDO;
 use DateTime;
 
+
+
 class User extends Model
 {
     public static function login($email, $mdp) {
@@ -186,4 +188,20 @@ class User extends Model
         ]);
         return $stt->fetchAll(\PDO::FETCH_ASSOC);
     }
+
+    public static function cursusFromSession() {
+        // Récupérer $id_cursus à partir de la session
+        $id_cursus = $_SESSION['id_cursus'];
+    
+        $db = self::db();
+        $qry = "SELECT * FROM cursus WHERE id_cursus = :id_cursus";
+        $stt = $db->prepare($qry);
+        $stt->execute([
+            ':id_cursus' => $id_cursus
+        ]);
+    
+        return $stt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    
+    
 }

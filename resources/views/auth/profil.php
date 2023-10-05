@@ -1,60 +1,54 @@
-<h1>Mon profil  -  <?= $_SESSION['score']?><i style="color:gold" class="fa-solid fa-trophy"></i></h1>
-<section class="section-update">
-    <form action="<?= route('Profil') ?>" method="post">
-        <div>
-            <label for="pseudo">pseudo</label>
-            <input type="text" id="pseudo" name="pseudo" required autocomplete="off" value="<?= $_SESSION['pseudo'] ?>">
-        </div>
-        <div>
-            <label for="email">email</label>
-            <input type="email" id="email" name="email" required autocomplete="off" value="<?= $_SESSION['email'] ?>">
-        </div>
-        <button><i class="fa-solid fa-floppy-disk"></i></button>
-    </form>
-</section>
-<section class="section-profil">
-    <div class="list-amis">
-        <h2>Mes amis:</h2>
-        <div class="box-amis">
-            <?php if(!empty($amis)): ?>
-                <?php foreach($amis as $ami): ?>
-                    <div class="box">
-                        <p><?= $ami->pseudo ?></p>
-                        <p><?= ($ami->score === null) ? '0' : $ami->score ?> <i style="color:gold" class="fa-solid fa-trophy"></i></p>
-                        <p>depuis <?= intervalleDate($ami->date) ?></p>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>Aucun ami pour le moment</p>
-            <?php endif; ?>
-        </div>
-    </div>
-    <div id="chart">
-        <h2>Mes stats :</h2>
-    </div>
-</section>
+<?php 
 
-<script>
-var options = {
-        series: [<?= $nbWin ?>, <?= $nbLose ?>, <?= $nbInProgress ?>],
-        chart: {
-        width: 380,
-        type: 'pie',
-    },
-    labels: ['gagné', 'perdu', 'en cours'],
-    responsive: [{
-        breakpoint: 480,
-        options: {
-            chart: {
-            width: 200
-            },
-            legend: {
-            position: 'bottom'
-            }
+use App\Models\User;
+
+?>
+<div class="container5">
+<h1>Profil Utilisateur</h1>
+
+<form>
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom"><br><br>
+
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom"><br><br>
+
+    <label for="motDePasse">Mot de passe :</label>
+    <input type="password" id="motDePasse" name="motDePasse"><br><br>
+
+    <label for="mail">Adresse E-mail :</label>
+    <input type="email" id="mail" name="mail"><br><br>
+
+    <label for="cursus">Cursus :</label>
+    
+    <select id="cursus" name="cursus">
+        <option value="cursus1">
+    <?php
+
+        $cursusList = User::cursusFromSession();
+    if ($cursusList) { 
+        // Vérifiez si $cursusList n'est pas nul
+        // Boucle pour générer les options
+        foreach ($cursusList as $cursus) {
+            echo "<option value='" . $cursus['id_cursus'] . "'>" . $cursus['libelle_annee'] . "</option>";
         }
-    }]
-};
+    } else {
+        // Gérez le cas où $cursusList est nul (par exemple, affichez un message d'erreur)
+        echo "<option value=''>Aucun cursus disponible</option>";
+    }
+    ?>
+    </option>
+    
+    </select>
+    <button type="button" id="changerCursus">Changer Cursus</button><br><br>
 
-var chart = new ApexCharts(document.querySelector("#chart"), options);
-chart.render();
-</script>
+    <label for="fichier">Ajouter un fichier :</label>
+    <input type="file" id="fichier" name="fichier"><br><br>
+    <label for="fichier">Liste des ajouts :</label><br><br>
+    <p>efzzzzzzzzzzzzzezffzefzeezef</p>
+
+    <button type="submit">Enregistrer</button>
+</form>
+
+
+</div>

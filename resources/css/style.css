@@ -911,3 +911,15 @@ color: white;
   display: flex;
   justify-content: center; /* Centre les boutons horizontalement */
 }
+
+
+.container5{
+  display: block;
+  margin: auto;
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+height: auto;
+width: 300px;
+padding: 10px;
+margin-top: 10px;
+}
