@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <header class="header-container">
-    <a id="accueil-btn" class="button-primary" href="<?= route('Logout')?>" >Accueil</a>
+    <a id="accueil-btn" class="button-primary" href="<?= route('ProductList')?>" >Accueil</a>
     <select id="cursus-dropdown" class="button-primary">
         <option value=""><?= $monCursus ?></option>
         <?php foreach($cursus as $uncursus): ?>
