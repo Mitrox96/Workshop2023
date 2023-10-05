@@ -3,7 +3,7 @@
     <form action="<?= route('Profil') ?>" method="post">
         <div>
             <label for="pseudo">pseudo</label>
-            <input type="text" id="pseudo" name="pseudo" required autocomplete="off" value="<?= $_SESSION['pseudo'] ?>">
+            <input type="text" id="pseudo" name="pseudo" required autocomplete="off" value="<?=?>">
         </div>
         <div>
             <label for="email">email</label>
