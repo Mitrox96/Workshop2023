@@ -26,10 +26,19 @@ class ProfilController extends Controller
   
     }
 
+    
     public function modifProfil()
     {
-        
-        return view('auth.modifProfil');
+        $cursus = User::getCursus ();
+        $ville = User::getVilles();
+
+
+        return view('auth.modifProfil',[
+            'cursus' => $cursus,
+            'ville' => $ville,
+        ]);
+  
+    
   
     }
 
