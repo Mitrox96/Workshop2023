@@ -1,3 +1,7 @@
+<header class="header-container">
+    <a id="accueil-btn" class="button-primary" href="<?= route('Profil')?>" >Page Précédente</a>
+    <a href="<?= route('Logout')?>" id="profil-btn" class="button-image">Deconnexion</a>
+</header>
 <h2 class="email_co1">Modification de vos informations personnelles</h2>
     <form method="POST" action="<?= route('Profil') ?>">
 
