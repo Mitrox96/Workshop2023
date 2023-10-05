@@ -30,11 +30,7 @@
                 <label class="email_co1" >Ville</label>
                 <p class="menuder"><?= $maVille ?></p>
                 </div><br>
-
-                <div>
-                    <button class="ajt"  id="ajout_artcl" name="ajout_d'article" require autocomplete="off"><a href="<?= route('AddMateriel') ?>">Ajout d'article</a></button>
-                </div>
-
+                
                 <div>
                     <button class="ajt"  id="ajout_artcl" name="ajout_d'article" require autocomplete="off"><a href="<?= route('AddMateriel') ?>">Ajout d'article</a></button>
                 </div>
