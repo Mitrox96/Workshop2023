@@ -15,7 +15,7 @@
         <?php endforeach; ?>
         <!-- Ajoutez d'autres options au besoin -->
     </select>
-    <a href="#" id="profil-btn" class="button-image">
+    <a href="<?= route('Profil')?>" id="profil-btn" class="button-image">
         <img class="icone" src="./././public/images/icone_user.png" alt="Image de profil">
     </a>
     </header>
