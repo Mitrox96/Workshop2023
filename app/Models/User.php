@@ -28,10 +28,10 @@ class User extends Model
         return false;
     }
 
-    public static function checkMailAndPseudo($email, $pseudo)
+    public static function checkMailAndPseudo($email, $prenom)
     {
         $db = self::db();
-        $qry = "SELECT * FROM Utilisateur WHERE email = :email OR prenom = :prenom";
+        $qry = "SELECT * FROM Utilisateur WHERE email = :email AND prenom = :prenom";
         $stt = $db->prepare($qry);
         $stt->execute([
             ':email' => $email,
@@ -44,14 +44,18 @@ class User extends Model
     public static function register($post)
     {
         $db = self::db();
-        $qry = "INSERT INTO Utilisateur (nom, prenom, email, mot_de_passe)
-                VALUES (:nom, :prenom, :email, :mdp)";
+        $qry = "INSERT INTO Utilisateur (nom, prenom, email, mot_de_passe, id_cursus, id_ville, id_role)
+                VALUES (:nom, :prenom, :email, :mdp, :cursus, :ville, :role)";
         $stt = $db->prepare($qry);
         $stt->execute([
             ':nom' => htmlentities($post['nom']),
             ':prenom' => htmlentities($post['prenom']),
             ':email' => htmlentities($post['email']),
-            ':mdp' => hash('sha256',$post['password'])
+            ':mdp' => hash('sha256',$post['password']),
+            ':cursus' => htmlentities($post['cursus']),
+            ':ville' => htmlentities($post['ville']),
+            ':role' => htmlentities($post['role'])
+
         ]);
         return true;
     }
@@ -185,5 +189,52 @@ class User extends Model
             ':id_utilisateur' => $id_utilisateur
         ]);
         return $stt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public static function getVilles()
+    {
+        $db = self::db();
+        $qry = "SELECT *
+                FROM Ville";
+        $stt = $db->prepare($qry);
+        $stt->execute();
+        $ville = $stt->fetchAll(PDO::FETCH_OBJ);
+        return $ville;
+    }
+
+    public static function getCursus()
+    {
+        $db = self::db();
+        $qry = "SELECT *
+                FROM Cursus";
+        $stt = $db->prepare($qry);
+        $stt->execute();
+        $cursus = $stt->fetchAll(PDO::FETCH_OBJ);
+        return $cursus;
+    }
+
+    public static function getMonCursus($id_utilisateur)
+    {
+        $db = self::db();
+        $qry = "SELECT libelle___annee
+                FROM Cursus
+                WHERE Cursus.id_cursus = (SELECT id_cursus FROM Utilisateur WHERE id_utilisateur = :id_utilisateur)";
+        $stt = $db->prepare($qry);
+        $stt->bindParam(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
+        $stt->execute();
+        $monCursus = $stt->fetchColumn();
+        return $monCursus;
+    }
+    
+    public static function getRoles()
+    {
+        $db = self::db();
+        $qry = "SELECT *
+                FROM Role";
+        $stt = $db->prepare($qry);
+        $stt->execute();
+        $role = $stt->fetchAll(PDO::FETCH_OBJ);
+        return $role;
+
     }
 }

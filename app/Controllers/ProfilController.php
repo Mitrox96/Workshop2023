@@ -16,12 +16,7 @@ class ProfilController extends Controller
 
     public function index()
     {
-        if ($_POST){
-            if (isset($_POST['email']) && $_POST['email'] !== '' ||
-                isset($_POST['prenom']) && $_POST['prenom'] !== '') {
-                    User::update($_SESSION['id_utilisateur'] ,$_POST['prenom'], $_POST['email']);
-            }
-        }
+        return view('auth.profil');
   
     }
 
