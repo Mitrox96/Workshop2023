@@ -6,18 +6,18 @@
 
     <title>Document</title>
 </head>
-<header class="header-container">
-    <a id="accueil-btn" class="button-primary" href="<?= route('ProductList')?>" >Accueil</a>
-    <select id="cursus-dropdown" class="button-primary">
-        <option value=""><?= $monCursus ?></option>
-        <?php foreach($cursus as $uncursus): ?>
-           <option value="<?= $uncursus->id_cursus ?>"><?=$uncursus->libelle___annee ?> </option>
-        <?php endforeach; ?>
-        <!-- Ajoutez d'autres options au besoin -->
-    </select>
-    <a href="<?= route('Profil')?>" id="profil-btn" class="button-image">
-        <img class="icone" src="./././public/images/icone_user.png" alt="Image de profil">
-    </a>
+    <header class="header-container">
+        <a id="accueil-btn" class="button-primary" href="<?= route('Logout')?>" >Accueil</a>
+        <select id="cursus-dropdown" class="button-primary">
+            <option value=""><?= $monCursus ?></option>
+            <?php foreach($cursus as $uncursus): ?>
+            <option value="<?= $uncursus->id_cursus ?>"><?=$uncursus->libelle___annee ?> </option>
+            <?php endforeach; ?>
+            <!-- Ajoutez d'autres options au besoin -->
+        </select>
+        <a href="<?= route('Profil')?>" id="profil-btn" class="button-image">
+            <img class="icone" src="./././public/images/icone_user.png" alt="Image de profil">
+        </a>
     </header>
     <body>
     <div>
