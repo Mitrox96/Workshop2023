@@ -29,6 +29,8 @@ class ProfilController extends Controller
         $materiel = User::getMateriel($_SESSION['id_utilisateur']);
         $maVille = User::getMaVille($_SESSION['id_utilisateur']);
         $monCursus = User::getMonCursus($_SESSION['id_utilisateur']);
+        $ville = User::getvilles();
+        $cursus = User::getcursus();
 
 
         return view('auth.profil',[
@@ -36,6 +38,8 @@ class ProfilController extends Controller
             'user' => $user,
             'maVille' => $maVille,
             'monCursus' => $monCursus,
+            'ville' => $ville,
+            'cursus' => $cursus,
         ]);
   
     }
