@@ -29,8 +29,17 @@ class ProductListController extends Controller
         $cursus = User::getCursus();
         $monCursus = User::getMonCursus($_SESSION['id_utilisateur']);
         $utilisateur = User::getUtilisateur($_SESSION['id_utilisateur']);
-        $materiel_cursus = User::getMaterielForCursus($_SESSION['id_cursus']);
+       
+        // Récupérer la valeur de cursus depuis la requête GET
+        $cursus_id = isset($_GET['cursus']) ? $_GET['cursus'] : null;
 
+        // Utiliser $cursus_id pour filtrer les données du modèle
+        $materiel_cursus = User::getMaterielForCursus($cursus_id);
+
+        // ...
+
+
+        
          return view('pages.product_list', [
             'monCursus' => $monCursus,
             'cursus' => $cursus,

@@ -252,7 +252,8 @@ class User extends Model
     return $materiel;
 }
 
-public static function getMaterielForCursus($id_cursus)
+
+public static function getMaterielForCursus($cursus_id)
 {
     $db = self::db();
     $qry = "SELECT description, image
@@ -260,9 +261,12 @@ public static function getMaterielForCursus($id_cursus)
             INNER JOIN Cursus ON Materiel.id_cursus = Cursus.id_cursus
             WHERE Cursus.id_cursus = :id_cursus";
     $stt = $db->prepare($qry);
-    $stt->bindParam(':id_cursus', $id_cursus, PDO::PARAM_INT);
+    $stt->bindParam(':id_cursus', $cursus_id, PDO::PARAM_INT);
     $stt->execute();
     $materiel_cursus = $stt->fetchAll(PDO::FETCH_OBJ);
     return $materiel_cursus;
     }
 }
+
+
+

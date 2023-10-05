@@ -57,51 +57,6 @@ function convertBlobToBase64($blobData) {
 
 
 
-</div>
-
-    <div class="product_container">
-    <img class="product_img" src="url_de_votre_image.jpg" alt="Image des pinceaux">
-    <div class="content">
-        <h2 class="product_title">Pinceaux</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec turpis vel elit viverra feugiat.
-            Nulla facilisi. Integer fermentum auctor metus, in luctus libero feugiat nec.
-        </p>
-        <a href="mailto:exemple@email.com" class="contact-button">Contactez-nous</a>
-    </div>
-</div><div class="product_container">
-    <img class="product_img" src="url_de_votre_image.jpg" alt="Image des pinceaux">
-    <div class="content">
-        <h2 class="product_title">Pinceaux</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec turpis vel elit viverra feugiat.
-            Nulla facilisi. Integer fermentum auctor metus, in luctus libero feugiat nec.
-        </p>
-        <a href="mailto:exemple@email.com" class="contact-button">Contactez-nous</a>
-    </div>
-</div><div class="product_container">
-    <img class="product_img" src="url_de_votre_image.jpg" alt="Image des pinceaux">
-    <div class="content">
-        <h2 class="product_title">Pinceaux</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec turpis vel elit viverra feugiat.
-            Nulla facilisi. Integer fermentum auctor metus, in luctus libero feugiat nec.
-        </p>
-        <a href="mailto:exemple@email.com" class="contact-button">Contactez-nous</a>
-    </div>
-</div>
-<div class="product_container">
-    <img class="product_img" src="url_de_votre_image.jpg" alt="Image des pinceaux">
-    <div class="content">
-        <h2 class="product_title">Pinceaux</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec turpis vel elit viverra feugiat.
-            Nulla facilisi. Integer fermentum auctor metus, in luctus libero feugiat nec.
-        </p>
-        <a href="mailto:exemple@email.com" class="contact-button">Contactez-nous</a>
-    </div>
-</div>
-
 <script>
         // Écouteur d'événement pour détecter les changements dans la liste déroulante
         document.getElementById('cursus-dropdown').addEventListener('change', function () {
