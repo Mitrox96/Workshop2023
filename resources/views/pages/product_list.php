@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <header class="header-container">
-    <a id="accueil-btn" class="button-primary" href="<?= route('Logout')?>" >Accueil</a>
+    <a id="accueil-btn" class="button-primary" href="<?= route('ProductList')?>" >Accueil</a>
     <select id="cursus-dropdown" class="button-primary">
         <option value=""><?= $monCursus ?></option>
         <?php foreach($cursus as $uncursus): ?>
@@ -20,7 +20,11 @@
     </a>
     </header>
     <body>
-
+    <?php foreach ($user as $users): ?>
+            <li>
+            <?php echo $user?>
+            </li>
+        <?php endforeach; ?>
 
     <div class="product_container">
     <img class="product_img" src="url_de_votre_image.jpg" alt="Image des pinceaux">
