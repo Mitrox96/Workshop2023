@@ -36,6 +36,8 @@
                 </div>
 
                 <div>
+                <a href="<?= route('ModifProfil') ?>">Modifier mon profil</a>
+
                     <button onclick="<?= route('ModifProfil') ?>" class="ajt"  id="modif_prfl" name="modif_profil" require autocomplete="off">Modifiez votre profil</button>
                 </div>
 
