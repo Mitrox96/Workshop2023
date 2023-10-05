@@ -1,6 +1,6 @@
 <div class="container3">
         <div class="form-container3">
-            <h1>EduPartage Inscription</h1>
+            <h1>EduPartage<span>Inscription</span></h1>
             <form action="<?= route('Register') ?>" method="post" class="form">
                 <div>
                     <label class="email_co1" for="nom">Nom:</label>
