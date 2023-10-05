@@ -22,34 +22,37 @@
     <body>
     <div>
 
+<?php
+// Function to display base64-encoded image
+// Function to display base64-encoded image
+
 
 // Function to display base64-encoded image
-// Function to display base64-encoded image
-<?php 
-function displayBase64Image($base64Data, $altText = "") {
-    // Decode the base64 data
-    $decodedImage = base64_decode($base64Data);
-    // Display the image
-    echo '<img class="product_img" src="data:image/jpeg;base64,' . $base64Data . '" alt="' . $altText . '">';
+
+// Function to display image from BLOB data<?php
+// Function to convert BLOB data to base64
+function convertBlobToBase64($blobData) {
+    return base64_encode($blobData);
 }
-?>
-// Your loop
-<?php foreach ($materiel as $mat): ?>
-    <?php// if ($mat->id_cursus == $uncursus->id_cursus): ?>
+
+ foreach ($materiel_cursus as $mat): ?>
         <div class="product_container">
             <?php
-            // Call the function to display the image
-            displayBase64Image($mat->image, $mat->description);
+            // Convert BLOB data to base64
+            $base64Image = convertBlobToBase64($mat->image);
             ?>
+            <!-- Use the base64 image data directly in the img tag -->
+            <img class="product_img" src="data:image/png;base64,<?= $base64Image ?>" alt="<?= $mat->description ?>">
             <div class="content">
-                <h2 class="product_title"><?= $mat->description ?></h2>
+                <h2 class="product_title"><? ?></h2>
+                <!-- Assurez-vous de spécifier la clé correcte pour le prénom -->
+
                 <p>
                     <?= $mat->description ?>
                 </p>
                 <a href="mailto:exemple@email.com" class="contact-button">Contactez-nous</a>
             </div>
         </div>
-    <?php //endif; ?>
 <?php endforeach; ?>
 
 
@@ -99,5 +102,14 @@ function displayBase64Image($base64Data, $altText = "") {
     </div>
 </div>
 
+<script>
+        // Écouteur d'événement pour détecter les changements dans la liste déroulante
+        document.getElementById('cursus-dropdown').addEventListener('change', function () {
+            // Récupérer la valeur sélectionnée
+            var selectedValue = this.value;
+            // Rediriger vers la nouvelle URL avec la valeur sélectionnée
+            window.location.href = 'product_list?cursus=' + selectedValue;
+        });
+    </script>
 </body>
 </html>

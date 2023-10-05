@@ -81,8 +81,9 @@ main h1 {
 }
 
 .product_img {
-    max-width: 100%;
-    height: auto;
+    width: 100px;
+    
+    
     border-radius: 8px; /* Ajout d'un arrondi à l'image */
 }
 

@@ -28,12 +28,14 @@ class ProductListController extends Controller
 
         $cursus = User::getCursus();
         $monCursus = User::getMonCursus($_SESSION['id_utilisateur']);
-        $materiel = User::getMaterielForCursus();
+        $utilisateur = User::getUtilisateur($_SESSION['id_utilisateur']);
+        $materiel_cursus = User::getMaterielForCursus($_SESSION['id_cursus']);
 
          return view('pages.product_list', [
             'monCursus' => $monCursus,
             'cursus' => $cursus,
-            'materiel' => $materiel
+            'materiel_cursus' => $materiel_cursus,
+            'utilisateur' => $utilisateur
         ]);
     }
 }
