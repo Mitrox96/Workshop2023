@@ -20,11 +20,41 @@
     </a>
     </header>
     <body>
-    <?php foreach ($user as $users): ?>
-            <li>
-            <?php echo $user?>
-            </li>
-        <?php endforeach; ?>
+    <div>
+
+
+// Function to display base64-encoded image
+// Function to display base64-encoded image
+<?php 
+function displayBase64Image($base64Data, $altText = "") {
+    // Decode the base64 data
+    $decodedImage = base64_decode($base64Data);
+    // Display the image
+    echo '<img class="product_img" src="data:image/jpeg;base64,' . $base64Data . '" alt="' . $altText . '">';
+}
+?>
+// Your loop
+<?php foreach ($materiel as $mat): ?>
+    <?php// if ($mat->id_cursus == $uncursus->id_cursus): ?>
+        <div class="product_container">
+            <?php
+            // Call the function to display the image
+            displayBase64Image($mat->image, $mat->description);
+            ?>
+            <div class="content">
+                <h2 class="product_title"><?= $mat->description ?></h2>
+                <p>
+                    <?= $mat->description ?>
+                </p>
+                <a href="mailto:exemple@email.com" class="contact-button">Contactez-nous</a>
+            </div>
+        </div>
+    <?php //endif; ?>
+<?php endforeach; ?>
+
+
+
+</div>
 
     <div class="product_container">
     <img class="product_img" src="url_de_votre_image.jpg" alt="Image des pinceaux">

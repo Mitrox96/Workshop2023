@@ -69,7 +69,6 @@ class User extends Model
             ':nom' => htmlentities($nom),
             ':prenom' => htmlentities($prenom),
             ':email' => htmlentities($email),
-            ':id_joueur' => $id_joueur
         ]);
         $_SESSION['prenom'] = htmlentities($prenom);
         $_SESSION['email'] = htmlentities($email);
@@ -252,4 +251,15 @@ class User extends Model
     $materiel = $stt->fetchAll(PDO::FETCH_ASSOC);
     return $materiel;
 }
+
+public static function getMaterielForCursus()
+{
+    $db = self::db();
+    $qry = "SELECT description, image
+            FROM Materiel ";
+    $stt = $db->prepare($qry);
+    $stt->execute();
+    $materiel = $stt->fetchAll(PDO::FETCH_OBJ);
+    return $materiel;
+    }
 }
