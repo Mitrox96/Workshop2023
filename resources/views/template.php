@@ -28,37 +28,16 @@ $title = (isset($current['name'])) ? ' - ' . ucfirst($current['name']) : '';
 
 <main>
 
-    <?php require_once __BASEPATH__ . '/resources/views/' . $page . '.php';
-   
-    ?>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <?php  echo $page; ?>
+    <?php require_once __BASEPATH__ . '/resources/views/' . $page . '.php'; ?>
 
 </main>
 
-<<<<<<< HEAD
 <?php 
 
 if ($page != 'pages/home' && $page != 'auth/login' && $page != 'auth/register'){
     require_once __BASEPATH__ . '/resources/views/common/footer.php';
 }
 ?>
-=======
-
->>>>>>> 7ba6b16327801577a631c0ca3d0293a90e827ae9
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="resources/js/app.js"></script>
